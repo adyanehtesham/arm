@@ -1,0 +1,27 @@
+{
+  "type": "module",
+  "name": "arm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.7.4",
+    "fs-extra": "^11.2.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
+    "fs": "^0.0.1-security",
+    "google-auth-library": "^9.14.1",
+    "googleapis": "^105.0.0",
+    "ts-node": "^10.9.2"
+  }
+}
