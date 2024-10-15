@@ -1,5 +1,6 @@
 export type Contact = {
 	name: string;
+	birthday: string;
 	company: string;
 	role: string;
 	firstMet: Date;

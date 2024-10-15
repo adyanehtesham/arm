@@ -3,7 +3,6 @@ import path from 'path'
 import process from 'process'
 import { authenticate } from '@google-cloud/local-auth'
 import { calendar_v3, google } from 'googleapis'
-import { OAuth2Client } from 'google-auth-library'
 type OAuth2ClientType = InstanceType<typeof google.auth.OAuth2>
 
 // If modifying these scopes, delete token.json.
@@ -106,3 +105,22 @@ export async function deleteEvents(events: string[], calendar: calendar_v3.Calen
         })
     })
 }
+
+
+//crewating and deletting examples
+// const res = await calendar.events.insert({
+//     calendarId: 'primary',
+//     requestBody: {
+//         summary: 'All-Day Event Title',
+//         location: 'Event Location',
+//         description: 'Event Description',
+//         start: {
+//             date: '2024-10-10', // YYYY-MM-DD format
+//         }, end: {
+//             date: '2024-10-10', // Same as start date for a single-day event
+//         },
+//     }
+// })
+// console.log(res.data)
+// createContact(calendar);
+// deleteEvents(['m1gf43utoqe2g9bdg98j3354d4', 'b5u71shlrhhr4auajgtmdmpc4s', 'htbut72evnus1f3rscuhll79p0', '3clk78shudecij3a35nnv9hsgs'], calendar)
