@@ -1,35 +1,37 @@
-import { fetchContact, createTestContact } from 'utils/manager'
-import * as readline from 'readline'
+import { fetchContact, handleNewContact, fetchAttribute, createTestContact } from 'utils/manager'
 import { google } from 'googleapis'
 import { authorize } from 'utils/calendar'
+import * as readline from 'readline'
 
-const rl = readline.createInterface({
+export const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 })
-
-const askQuestion = (query: string): Promise<string> => {
-    return new Promise(resolve => rl.question(query, resolve))
-}
 
 async function main() {
     const auth = await authorize()
     const calendar = google.calendar({ version: 'v3', auth })
 
-    try {
-
-        // await createTestContact(calendar)
-
-        const name = process.argv[2]
-        console.log('now fetching contact')
-        await fetchContact(name)
-
-    } catch (error) {
-        console.log(error)
+    // TODO - Handle CLI arguments, create (-c/new), fetch (just use contact name, or -b, -c,-f for bday/company/firstmetDate) etc.
+    switch (process.argv[2]) {
+        case 'test':
+            await createTestContact(calendar)
+            break
+        case 'testcal':
+            await createTestContact(calendar, true)
+        case 'new':
+        case '-c':
+            await handleNewContact(process.argv[2], calendar)
+            break;
+        case 'fetch':
+            await fetchContact(process.argv[3])
+            break;
+        default:
+            fetchAttribute(process.argv[2])
+            break
     }
-    await createTestContact(calendar)
 
-    rl.close();
+    rl.close()
 }
 
 main().catch(e => {
