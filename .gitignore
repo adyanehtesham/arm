@@ -1,4 +1,4 @@
 .env
 src/token.json
 src/credentials.json
-contacts/*/
+src/contacts/*/
