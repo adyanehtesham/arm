@@ -106,7 +106,7 @@ export async function handleNewContact(argument: string, calendar: calendar_v3.C
   })
   const followUpEventId = followUpEvent.data.id
 
-  // change it so that the firstMet and followUpDates have an calendar event id as well
+  // save contact to file
   if (initialEventId && followUpEventId) {
     const newContact: Contact = {
       name: name!,

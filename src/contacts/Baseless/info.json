@@ -1,14 +1,24 @@
 {
   "name": "Baseless",
+  "birthday": "2002-04-02",
   "company": "Staples",
   "role": "Tech Associate",
-  "firstMet": "2024-10-15T06:01:52.573Z",
-  "lastInteraction": "2024-10-15T06:01:52.573Z",
-  "followUpDate": "2024-11-14T07:01:52.573Z",
+  "firstMet": {
+    "date": "2024-10-21T13:55:53.507Z",
+    "eventId": "initialEventId"
+  },
+  "lastInteraction": {
+    "date": "2024-10-21T13:55:53.507Z",
+    "eventId": "initialEventId"
+  },
+  "followUpDate": {
+    "date": "2024-11-20T14:55:53.507Z",
+    "eventId": "followUpEventId"
+  },
   "notes": [
     {
       "title": "First Meeting",
-      "date": "2024-10-15T06:01:52.573Z"
+      "date": "2024-10-21T13:55:53.507Z"
     }
   ]
 }
